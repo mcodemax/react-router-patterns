@@ -4,7 +4,8 @@ import { BrowserRouter, Switch, Route, Routes, Navigate } from 'react-router-dom
 // react-router-dom v6 docs
 // https://reactrouter.com/docs/en/v6/getting-started/overview
 import Nav from './Nav';
-import DogList from './DogList';
+//import DogList from './DogList'; //may not be needed
+import DogDetails from './DogDetails';
 
 function App(props) {
   return (
@@ -12,11 +13,14 @@ function App(props) {
       <BrowserRouter>
         <Routes> {/* replaces <Switch> in v6*/ }
           <Route exact={"true"} path="/dogs" element={
-              <>
-              <Nav dogs={props.dogs}/>
-              {/* <DogList /> */}
-              </>
+            <>
+            <Nav dogs={props.dogs}/>
+            {/* <DogList /> */}
+            </>
           }/>
+          <Route path="/dogs/:name" >
+            <DogDetails dog={props.dogs.name}/> // what props will this need?
+          />
           <Route path="/" element={<Navigate replace to="/dogs" />} />
           <Route path="*" element={<Navigate replace to="/dogs" />} />
           {/*
