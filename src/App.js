@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import { Switch, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Routes, Navigate } from 'react-router-dom';
+// react-router-dom v6 docs
+// https://reactrouter.com/docs/en/v6/getting-started/overview
+import Nav from './Nav';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/home" element={<DogList />} />
-        <Route path="/" element={<Navigate replace to="/home" />} />
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/home" element={<DogList />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
