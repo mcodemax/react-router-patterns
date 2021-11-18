@@ -9,7 +9,7 @@ const Nav = ({dogs}) => {
         {
           dogs.map(dog => {
             return (
-              <NavLink exact={"true"} to={`/dogs/${dog.name}`}>Chips</NavLink>
+              <NavLink exact={"true"} to={`/dogs/${dog.name}`}>{`${dog.name}`}</NavLink>
             )
           })
         }
