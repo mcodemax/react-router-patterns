@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<DogList />} />
-          <Route path="/" element={<Navigate replace to="/home" />} />
-          <Route path="*" element={<Navigate replace to="/home" />} />
+          <Route path="/dogs" element={<DogList />} />
+          <Route path="/" element={<Navigate replace to="/dogs" />} />
+          <Route path="*" element={<Navigate replace to="/dogs" />} />
           {/*
             When no other route matches the URL, you can render a "not found"
             route using path="*". This route will match any URL, but
