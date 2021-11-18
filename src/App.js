@@ -6,12 +6,17 @@ import { BrowserRouter, Switch, Route, Routes, Navigate } from 'react-router-dom
 import Nav from './Nav';
 import DogList from './DogList';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/dogs" element={<DogList />} />
+        <Routes> {/* replaces <Switch> in v6*/ }
+          <Route exact={"true"} path="/dogs" element={
+              <>
+              <Nav dogs={props.dogs}/>
+              {/* <DogList /> */}
+              </>
+          }/>
           <Route path="/" element={<Navigate replace to="/dogs" />} />
           <Route path="*" element={<Navigate replace to="/dogs" />} />
           {/*
