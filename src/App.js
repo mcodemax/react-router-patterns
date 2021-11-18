@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Routes, Navigate } from 'react-router-dom
 // react-router-dom v6 docs
 // https://reactrouter.com/docs/en/v6/getting-started/overview
 import Nav from './Nav';
+import DogList from './DogList';
 
 function App() {
   return (
@@ -12,6 +13,13 @@ function App() {
         <Routes>
           <Route path="/home" element={<DogList />} />
           <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="*" element={<Navigate replace to="/home" />} />
+          {/*
+            When no other route matches the URL, you can render a "not found"
+            route using path="*". This route will match any URL, but
+            will have the weakest precedence so the router will only pick it
+            if no other routes match.
+          */}
         </Routes>
       </BrowserRouter>
     </div>
