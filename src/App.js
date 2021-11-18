@@ -18,9 +18,9 @@ function App(props) {
             {/* <DogList /> */}
             </>
           }/>
-          <Route path="/dogs/:name" >
-            <DogDetails dog={props.dogs.name}/> // what props will this need?
-          />
+          <Route path="/dogs/:name" element={
+            <DogDetails dog={props.dogs}/> {/* currently passes whole dog array in, possible to avoid? */}
+          }/>
           <Route path="/" element={<Navigate replace to="/dogs" />} />
           <Route path="*" element={<Navigate replace to="/dogs" />} />
           {/*
