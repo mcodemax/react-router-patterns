@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
-// import './Nav.css'; //style later .active classes
+import './Nav.css'; //style later .active classes
 
 
 const Nav = ({dogs}) => {
